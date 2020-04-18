@@ -1,0 +1,17 @@
+#result {
+  font-size: 25em;
+}
+
+.dice {
+  width: 85%;
+  margin-top: 20px;
+  font-size: 2em;
+}
+
+.bg-navy {
+  background-color: navy;
+}
+
+.top-buffer { 
+  margin-top: 20px; 
+}
