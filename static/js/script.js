@@ -1,56 +1,35 @@
+const dice = ["d2", "d4", "d6", "d8", "d10", "d12", "d20", "d100"];
+
 window.onload = () => {
-  document.getElementById("d2").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d2-quantity").value
-    rollDice(2, quantity)
-  });
-  document.getElementById("d4").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d4-quantity").value
-    rollDice(4, quantity)
-  });
-  document.getElementById("d6").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d6-quantity").value
-    rollDice(6, quantity)
-  });
-  document.getElementById("d8").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d8-quantity").value
-    rollDice(8, quantity)
-  });
-  document.getElementById("d10").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d10-quantity").value
-    rollDice(10, quantity)
-  });
-  document.getElementById("d12").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d12-quantity").value
-    rollDice(12, quantity)
-  });
-  document.getElementById("d20").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d20-quantity").value
-    rollDice(20, quantity)
-  });
-  document.getElementById("d100").addEventListener("click", (_) => {
-    let quantity = document.getElementById("d100-quantity").value
-    rollDice(100, quantity)
-  });
+
+  dice.forEach(die => {
+    document.getElementById(die).addEventListener("click", _ => {
+      let quantity = document.getElementById(`${die}-quantity`).value;
+      rollDice(die.substring(1), quantity)
+    })
+  })
 }
 
 function rollDice(numberOfFaces, numberOfDice) {
   updateResult("--")
   updateRolled("--")
-  return axios.get(`https://www.random.org/integers/?num=${numberOfDice}&min=1&max=${numberOfFaces}&col=1&base=10&format=plain&rnd=new`)
+
+  axios.get(`https://www.random.org/integers/?num=${numberOfDice}&min=1&max=${numberOfFaces}&col=${numberOfDice}&base=10&format=plain&rnd=new`)
     .then(response => {
+      let rolled = '';
+      let result = '';
+
       if (numberOfDice > 1) {
-        let values = response.data.split("\n");
-        values.pop();
-        let rolled = values.join(" ");
-        let result = values.reduce((a, b) => {
-          return parseInt(a) + parseInt(b)
-        }, 0)
-        updateRolled(rolled)
-        updateResult(result);
+        rolled = response.data;
+        let values = response.data.split("\t")
+        result = getSumOfList(values)
       } else {
-        updateResult(response.data)
-        updateRolled(response.data)
+        result = response.data;
+        rolled = response.data;
       }
+
+      updateResult(result)
+      updateRolled(rolled)
     })
     .catch(error => {
       console.error(error);
@@ -64,4 +43,10 @@ function updateResult(value) {
 
 function updateRolled(value) {
   document.getElementById("rolled").innerHTML = value;
+}
+
+function getSumOfList(list) {
+  return list.reduce((a, b) => {
+    return parseInt(a) + parseInt(b)
+  }, 0)
 }

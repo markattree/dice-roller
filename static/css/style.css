@@ -11,10 +11,6 @@ html, body {
   background-color: navy;
 }
 
-.top-buffer { 
-  margin-top: 20px; 
-}
-
 .dice {
   font-size: 1.5em;
 }
