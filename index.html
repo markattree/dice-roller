@@ -16,38 +16,166 @@
   <div class="container">
     <div class="row justify-content-sm-center">
       <div class="col-sm-12 text-center">
-        <h1 id="result">10000</h1>
+        <h1 id="result">--</h1>
       </div>
     </div>
     <div class="row justify-content-sm-center">
       <div class="col-sm-12 text-center">
-        <strong><p id="rolled">100,100,100,100,100,100,100,100,100,100</p></strong>
+        <strong><p id="rolled">--</p></strong>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d2" type="button">d2</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d2-quantity" class="custom-select dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d2" type="button">d2</button>
+        </div>
       </div>
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d4" type="button">d4</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d4-quantity" class="custom-select dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d4" type="button">d4</button>
+        </div>
       </div>
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d6" type="button">d6</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d6-quantity" class="custom-select dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d6" type="button">d6</button>
+        </div>
       </div>
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d8" type="button">d8</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d8-quantity" class="custom-select dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d8" type="button">d8</button>
+        </div>
       </div>
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d10" type="button">d10</button>
-      </div>
-      <div class=" col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d12" type="button">d12</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d10-quantity" class="custom-select form-control dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d10" type="button">d10</button>
+        </div>
       </div>
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn text-white bg-navy dice btn-lg" id="d20" type="button">d20</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d12-quantity" class="custom-select form-control dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d12" type="button">d12</button>
+        </div>
       </div>
       <div class="col-sm-6 col-lg-3 text-center">
-        <button class="btn bg-navy text-white dice btn-lg" id="d100" type="button">d100</button>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d20-quantity" class="custom-select form-control dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d20" type="button">d20</button>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3 text-center">
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <select id="d100-quantity" class="custom-select form-control dice">
+              <option selected value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <button class="btn bg-navy text-white w-70" id="d100" type="button">d100</button>
+        </div>
       </div>
     </div>
   </div>

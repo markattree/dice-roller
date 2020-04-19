@@ -7,12 +7,6 @@ html, body {
   font-size: 6em;
 }
 
-.dice {
-  width: 85%;
-  margin-top: 20px;
-  font-size: 2em;
-}
-
 .bg-navy {
   background-color: navy;
 }
@@ -20,3 +14,24 @@ html, body {
 .top-buffer { 
   margin-top: 20px; 
 }
+
+.dice {
+  font-size: 1.5em;
+}
+
+.input-group {
+  margin-top: 20px;
+}
+
+.btn {
+  width: 70%;
+}
+
+.input-group-prepend {
+  width: 30%
+}
+
+select {
+  width: 100%
+}
+
