@@ -1,4 +1,7 @@
 window.onload = () => {
+  document.getElementById("d2").addEventListener("click", (_) => {
+    rollDice(2)
+  });
   document.getElementById("d4").addEventListener("click", (_) => {
     rollDice(4)
   });
@@ -16,6 +19,9 @@ window.onload = () => {
   });
   document.getElementById("d20").addEventListener("click", (_) => {
     rollDice(20)
+  });
+  document.getElementById("d100").addEventListener("click", (_) => {
+    rollDice(100)
   });
 }
 
