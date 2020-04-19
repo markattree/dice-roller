@@ -27,15 +27,27 @@ window.onload = () => {
 
 function rollDice(numberOfFaces) {
   updateResult("--")
-  return axios.get(`https://www.random.org/integers/?num=1&min=1&max=${numberOfFaces}&col=1&base=10&format=plain&rnd=new`)
+  return axios.get(`https://www.random.org/integers/?num=10&min=1&max=${numberOfFaces}&col=1&base=10&format=plain&rnd=new`)
     .then(response => {
-      updateResult(response.data);
+      let values = response.data.split("\n");
+      values.pop();
+      let rolled = values.join(" ");
+      let result = values.reduce((a, b) => {
+        return parseInt(a) + parseInt(b)
+      }, 0)
+      updateRolled(rolled)
+      updateResult(result);
     })
-    .catch(_ => {
+    .catch(error => {
+      console.error(error);
       updateResult("Error");
     })
 }
 
 function updateResult(value) {
   document.getElementById("result").innerHTML = value;
+}
+
+function updateRolled(value) {
+  document.getElementById("rolled").innerHTML = value;
 }
